@@ -1,0 +1,32 @@
+.npt{
+	padding-top:0px !important;
+}
+.dataTables_wrapper {
+    padding: 10px;
+}
+.text-muted{
+	padding-top:10px;
+}
+.page-title {
+    padding: 20px 36px 20px 0;
+    display: block;
+    position: relative;
+}
+.form-group span {
+    font-weight: 400;
+    padding-bottom: 4px;
+    display: block;
+}
+.npl {
+	padding-left: 0px !important;
+}
+.npr{
+	padding-right: 0px !important;
+}
+.panel-heading.panel-heading-withadd{
+  display: inline-block;
+  width: 100%;
+}
+.panel-heading.panel-heading-withadd .panel-title{
+    float:right;
+}

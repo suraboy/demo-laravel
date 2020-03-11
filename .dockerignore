@@ -1,0 +1,12 @@
+.env
+Jenkinsfile
+docker-compose.yml
+docker/php
+docker/Dockerfile*
+database/**/*.sql
+.vscode
+README.md
+
+# PHP
+vendor
+composer.lock
