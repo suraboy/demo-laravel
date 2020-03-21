@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,16 +13,6 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('list');
-// });
-
-$router->get('/', [
-    'as'   => 'web_Healthcheck',
-    'uses' => 'HealthCheckcontroller@index',
-    'middleware' => 'auth'
-]);
-
-$router->get('status', function () {
-    return 'ok';
+Route::get('/', function () {
+    return view('login');
 });

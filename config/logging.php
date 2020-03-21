@@ -1,9 +1,9 @@
 <?php
 
+use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
 
-$channelName = env('APP_NAME') . '-' . env('APP_ENV');
 return [
 
     /*
@@ -37,8 +37,8 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'name' => $channelName,
-            'channels' => explode(',', env('LOG_STACK_CHANNELS', 'daily')),
+            'channels' => ['single'],
+            'ignore_exceptions' => false,
         ],
 
         'single' => [
@@ -54,37 +54,50 @@ return [
             'days' => 14,
         ],
 
-        'gelf' => [
-            'driver' => 'custom',
+        'slack' => [
+            'driver' => 'slack',
+            'url' => env('LOG_SLACK_WEBHOOK_URL'),
+            'username' => 'Laravel Log',
+            'emoji' => ':boom:',
+            'level' => 'critical',
+        ],
 
-            'via' => \Hedii\LaravelGelfLogger\GelfLoggerFactory::class,
-
-            // This optional option determines the processors that should be
-            // pushed to the handler. This option is useful to modify a field
-            // in the log context (see NullStringProcessor), or to add extra
-            // data. Each processor must be a callable or an object with an
-            // __invoke method: see monolog documentation about processors.
-            // Default is an empty array.
-            'processors' => [
-                \Hedii\LaravelGelfLogger\Processors\NullStringProcessor::class,
-            ],
-
-            // This optional option determines the minimum "level" a message
-            // must be in order to be logged by the channel. Default is 'debug'
+        'papertrail' => [
+            'driver' => 'monolog',
             'level' => 'debug',
+            'handler' => SyslogUdpHandler::class,
+            'handler_with' => [
+                'host' => env('PAPERTRAIL_URL'),
+                'port' => env('PAPERTRAIL_PORT'),
+            ],
+        ],
 
-            // This optional option determines the channel name sent with the
-            // message in the 'facility' field. Default is equal to app.env
-            // configuration value
-            'name' => $channelName,
+        'stderr' => [
+            'driver' => 'monolog',
+            'handler' => StreamHandler::class,
+            'formatter' => env('LOG_STDERR_FORMATTER'),
+            'with' => [
+                'stream' => 'php://stderr',
+            ],
+        ],
 
-            // This optional option determines the host that will receive the
-            // gelf log messages. Default is 127.0.0.1
-            'host' => env('GRAYLOG_SERVER', '127.0.0.1'),
+        'syslog' => [
+            'driver' => 'syslog',
+            'level' => 'debug',
+        ],
 
-            // This optional option determines the port on which the gelf
-            // receiver host is listening. Default is 12201
-            'port' => env('GRAYLOG_PORT', '12201'),
+        'errorlog' => [
+            'driver' => 'errorlog',
+            'level' => 'debug',
+        ],
+
+        'null' => [
+            'driver' => 'monolog',
+            'handler' => NullHandler::class,
+        ],
+
+        'emergency' => [
+            'path' => storage_path('logs/laravel.log'),
         ],
     ],
 
