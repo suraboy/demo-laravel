@@ -1,10 +1,6 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-
-use App\User;
 use Faker\Generator as Faker;
-use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +13,21 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(App\Models\User::class, function (Faker $faker) {
     return [
+        'username' => $faker->userName,
         'name' => $faker->name,
+        'last_name' => $faker->userName,
         'email' => $faker->unique()->safeEmail,
-        'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        'remember_token' => Str::random(10),
+        'password' => bcrypt('secret'), // secret
+        'action_token' => bcrypt('secret'), // secret
+        'remember_token' => str_random(10),
+        'pin' => str_random(10),
+        'verify' => $faker->randomElement(['waiting','yes','no']),
+        'verify_date' => $faker->dateTimeThisMonth()->format('Y-m-d H:i:s'),
+        'mobile' => $faker->numberBetween($min = 1, $max = 9999999999),
+        'type' => $faker->randomElement(['owner','staff','other','admin','customer']),
+        'status' => $faker->randomElement(['active','inactive','ban']),
+        'user_group_id' => factory(App\Models\UserGroup::class)->create()->id,
     ];
 });

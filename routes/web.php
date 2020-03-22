@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
+
+Auth::routes();
+
+Route::group([
+    'namespace' => 'Web',
+    'middleware' => ['auth']
+], function ($route) {
+    $route->get('/', 'HomeController@index')->name('home');
+    $route->group([
+        'prefix' => 'users'
+    ], function ($route) {
+        $route->get('/','UserController@index')->name('users.index');
+    });
 });
+
+
