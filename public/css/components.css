@@ -16580,7 +16580,8 @@ thead .htCollapseButton:after {
   height: 0;
 }
 .dataTables_wrapper .table-bordered {
-  border-top: 0;
+    margin-bottom: 20px;
+    border-top: 0;
 }
 .dataTables_wrapper + .panel-body {
   border-top: 1px solid #ddd;
@@ -16629,7 +16630,7 @@ thead .htCollapseButton:after {
   border-top: 1px solid #bbb;
 }
 .dataTables_length {
-  float: right;
+  float: left;
   display: inline-block;
   margin: 0 0 20px 20px;
 }
@@ -16653,7 +16654,7 @@ thead .htCollapseButton:after {
 .dataTables_filter {
   position: relative;
   display: block;
-  float: left;
+  float: right;
   margin: 0 0 20px 20px;
 }
 .dataTables_filter > label {

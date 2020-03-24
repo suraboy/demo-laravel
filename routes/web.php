@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,16 +13,23 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('list');
-// });
 
-$router->get('/', [
-    'as'   => 'web_Healthcheck',
-    'uses' => 'HealthCheckcontroller@index',
-    'middleware' => 'auth'
-]);
+Auth::routes();
 
-$router->get('status', function () {
-    return 'ok';
+Route::group([
+    'namespace' => 'Web',
+    'middleware' => ['auth']
+], function ($route) {
+    $route->get('/', 'HomeController@index')->name('home');
+    $route->group([
+        'prefix' => 'users'
+    ], function ($route) {
+        $route->get('/','UserController@index')->name('users.index');
+        $route->get('/create','UserController@create')->name('users.create');
+        $route->post('/','UserController@create')->name('users.insert');
+        $route->get('/{id}','UserController@show')->name('users.info');
+        $route->post("/delete","UserController@destroy")->name('users.delete');
+    });
 });
+
+
