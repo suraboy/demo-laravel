@@ -37,7 +37,9 @@
                     <!--End Logo icon -->
                     <!-- Logo text -->
                     <span class="logo-text">
-                        <img src="{{ asset('assets') }}/images/logo-text.png" alt="homepage" class="light-logo"/>
+                        <div class="col-lg-12">
+                            BackOffice
+                        </div>
                     </span>
                 </a>
                 <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)"
@@ -45,6 +47,36 @@
                    aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
             </div>
             <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                <ul class="dropdown-menu">
+                    <!-- User image -->
+                    <li class="user-header">
+                        <canvas class="letter-avatar-circle img-circle" title="Boy Dev" alt="User Image" width="90" height="90"></canvas>
+
+
+                        <p>
+                            Boy Dev - admin
+                            <small>Member since 2019-02-08 10:24:37</small>
+                        </p>
+                    </li>
+                    <!-- Menu Footer-->
+                    <li class="user-footer">
+                        <div class="pull-left">
+                            <a href="https://staging-cms.eggsmartpos.com/users/12/edit" class="btn btn-default btn-flat">
+                                <i class="fa fa-child text-blue"></i>
+                                Profile
+                            </a>
+                        </div>
+                        <div class="pull-right">
+                            <a href="#logout" class="btn btn-default btn-flat" onclick="$('#logout').submit();">
+                                <i class="fa fa-sign-out text-red"></i>
+                                Sign out
+                            </a>
+                        </div>
+                        <form method="POST" action="https://staging-cms.eggsmartpos.com/logout" accept-charset="UTF-8" style="display:none;" id="logout"><input name="_token" type="hidden" value="tFfPecGCgbkNySedEuThqXUGFBKnFJDGdiSqXkvR">
+                            <button type="submit">global.logout</button>
+                        </form>
+                    </li>
+                </ul>
                 <ul class="navbar-nav float-left mr-auto">
                     <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light"
                                                               href="javascript:void(0)" data-sidebartype="mini-sidebar"><i
@@ -65,80 +97,12 @@
                     <li class="nav-item search-box"><a class="nav-link waves-effect waves-dark"
                                                        href="javascript:void(0)"><i class="ti-search"></i></a>
                         <form class="app-search position-absolute">
-                            <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
+                            <input type="text" class="form-control" placeholder="Search &amp; Enter"> <a
                                 class="srh-btn"><i class="ti-close"></i></a>
                         </form>
                     </li>
                 </ul>
                 <ul class="navbar-nav float-right">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-bell font-24"></i>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i
-                                class="font-24 mdi mdi-comment-processing"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown"
-                             aria-labelledby="2">
-                            <ul class="list-style-none">
-                                <li>
-                                    <div class="">
-                                        <!-- Message -->
-                                        <a href="javascript:void(0)" class="link border-top">
-                                            <div class="d-flex no-block align-items-center p-10">
-                                                <span class="btn btn-success btn-circle"><i
-                                                        class="ti-calendar"></i></span>
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">Event today</h5>
-                                                    <span class="mail-desc">Just a reminder that event</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <!-- Message -->
-                                        <a href="javascript:void(0)" class="link border-top">
-                                            <div class="d-flex no-block align-items-center p-10">
-                                                <span class="btn btn-info btn-circle"><i class="ti-settings"></i></span>
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">Settings</h5>
-                                                    <span class="mail-desc">You can customize this template</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <!-- Message -->
-                                        <a href="javascript:void(0)" class="link border-top">
-                                            <div class="d-flex no-block align-items-center p-10">
-                                                <span class="btn btn-primary btn-circle"><i class="ti-user"></i></span>
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">Pavan kumar</h5>
-                                                    <span class="mail-desc">Just see the my admin!</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <!-- Message -->
-                                        <a href="javascript:void(0)" class="link border-top">
-                                            <div class="d-flex no-block align-items-center p-10">
-                                                <span class="btn btn-danger btn-circle"><i
-                                                        class="fa fa-link"></i></span>
-                                                <div class="m-l-10">
-                                                    <h5 class="m-b-0">Luanch Admin</h5>
-                                                    <span class="mail-desc">Just see the my new admin!</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href=""
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -309,17 +273,15 @@
         color:red;
     }
 </style>
-<script src="{{ asset('assets') }}/libs/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap tether Core JavaScript -->
-<script src="{{ asset('assets') }}/libs/popper.js/dist/umd/popper.min.js"></script>
-<script src="{{ asset('assets') }}/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="{{ asset('assets') }}/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-<script src="{{ asset('assets') }}/extra-libs/sparkline/sparkline.js"></script>
+<script src="{{asset('assets')}}/libs/jquery/dist/jquery.min.js"></script>
+<script src="{{asset('dist')}}/js/jquery.ui.touch-punch-improved.js"></script>
+<script src="{{asset('dist')}}/js/jquery-ui.min.js"></script>
 <!-- Bootstrap tether Core JavaScript -->
 <script src="{{asset('assets')}}/libs/popper.js/dist/umd/popper.min.js"></script>
 <script src="{{asset('assets')}}/libs/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- slimscrollbar scrollbar JavaScript -->
 <script src="{{asset('assets')}}/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+<script src="{{asset('assets')}}/extra-libs/sparkline/sparkline.js"></script>
 <!--Wave Effects -->
 <script src="{{asset('dist')}}/js/waves.js"></script>
 <!--Menu sidebar -->

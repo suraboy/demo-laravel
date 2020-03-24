@@ -25,6 +25,10 @@ Route::group([
         'prefix' => 'users'
     ], function ($route) {
         $route->get('/','UserController@index')->name('users.index');
+        $route->get('/create','UserController@create')->name('users.create');
+        $route->post('/','UserController@create')->name('users.insert');
+        $route->get('/{id}','UserController@show')->name('users.info');
+        $route->post("/delete","UserController@destroy")->name('users.delete');
     });
 });
 
