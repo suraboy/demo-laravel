@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
+
 /**
  * Class UserController
  * @package App\Http\Controllers\Web
@@ -37,12 +38,17 @@ class UserController extends Controller
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function create()
+    public function create(Request $request)
     {
         return view('pages.users.create');
     }
 
-    public function show(Request $request,$id)
+    public function insert(Request $request){
+        $response = $this->userRepository->create($request->all());
+        return view('pages.users.create')->with('alert-success', 'Create User Successfully!');
+    }
+
+    public function show(Request $request, $id)
     {
         return view('pages.users.create');
     }

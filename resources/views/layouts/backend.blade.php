@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets') }}/images/favicon.png">
-    <title>Matrix Template - The Ultimate Multipurpose admin template</title>
+    <title>BackOffice</title>
     <!-- Custom CSS -->
     <link href="{{ asset('assets') }}/dist/css/style.min.css" rel="stylesheet">
 </head>
@@ -50,7 +50,8 @@
                 <ul class="dropdown-menu">
                     <!-- User image -->
                     <li class="user-header">
-                        <canvas class="letter-avatar-circle img-circle" title="Boy Dev" alt="User Image" width="90" height="90"></canvas>
+                        <canvas class="letter-avatar-circle img-circle" title="Boy Dev" alt="User Image" width="90"
+                                height="90"></canvas>
 
 
                         <p>
@@ -61,7 +62,8 @@
                     <!-- Menu Footer-->
                     <li class="user-footer">
                         <div class="pull-left">
-                            <a href="https://staging-cms.eggsmartpos.com/users/12/edit" class="btn btn-default btn-flat">
+                            <a href="https://staging-cms.eggsmartpos.com/users/12/edit"
+                               class="btn btn-default btn-flat">
                                 <i class="fa fa-child text-blue"></i>
                                 Profile
                             </a>
@@ -72,7 +74,9 @@
                                 Sign out
                             </a>
                         </div>
-                        <form method="POST" action="https://staging-cms.eggsmartpos.com/logout" accept-charset="UTF-8" style="display:none;" id="logout"><input name="_token" type="hidden" value="tFfPecGCgbkNySedEuThqXUGFBKnFJDGdiSqXkvR">
+                        <form method="POST" action="https://staging-cms.eggsmartpos.com/logout" accept-charset="UTF-8"
+                              style="display:none;" id="logout"><input name="_token" type="hidden"
+                                                                       value="tFfPecGCgbkNySedEuThqXUGFBKnFJDGdiSqXkvR">
                             <button type="submit">global.logout</button>
                         </form>
                     </li>
@@ -81,19 +85,6 @@
                     <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light"
                                                               href="javascript:void(0)" data-sidebartype="mini-sidebar"><i
                                 class="mdi mdi-menu font-24"></i></a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
-                            <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
                     <li class="nav-item search-box"><a class="nav-link waves-effect waves-dark"
                                                        href="javascript:void(0)"><i class="ti-search"></i></a>
                         <form class="app-search position-absolute">
@@ -107,8 +98,9 @@
                         <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href=""
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="{{ asset('assets') }}/images/users/1.jpg" alt="user" class="rounded-circle"
-                                width="31"></a>
-                        <div class="dropdown-menu dropdown-menu-right user-dd animated" style="min-width:auto!important;">
+                                 width="31"></a>
+                        <div class="dropdown-menu dropdown-menu-right user-dd animated"
+                             style="min-width:auto!important;">
                             <a class="dropdown-item" href="javascript:void(0)">
                                 <i class="ti-settings m-r-5 m-l-5"></i>
                                 Account Setting</a>
@@ -139,7 +131,7 @@
                             <span class="hide-menu">Dashboard</span>
                         </a>
                     </li>
-                    <li class="sidebar-item">
+                    <li class="sidebar-item" id="users">
                         <a class="sidebar-link has-arrow waves-effect waves-dark"
                            href="javascript:void(0)" aria-expanded="false">
                             <i class="fa fa-users"></i><span class="hide-menu">User Management </span></a>
@@ -237,12 +229,16 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="sidebar-item" id="logout">
+                    <li class="sidebar-item">
                         <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                           href="{{route('logout')}}" aria-expanded="false">
+                           href="{{ route('logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();" aria-expanded="false">
                             <i class="fa fa-sign-out"></i>
-                            {{ __('Logout') }}
+                            <span class="hide-menu">{{ __('Logout') }}</span>
                         </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     </li>
                 </ul>
             </nav>
@@ -268,17 +264,14 @@
         </footer>
     </div>
 </div>
-<style>
-    .text-red{
-        color:red;
-    }
-</style>
+
 <script src="{{asset('assets')}}/libs/jquery/dist/jquery.min.js"></script>
 <script src="{{asset('dist')}}/js/jquery.ui.touch-punch-improved.js"></script>
 <script src="{{asset('dist')}}/js/jquery-ui.min.js"></script>
+<link href="{{ asset('assets') }}/css/bootstrap.css" rel="stylesheet" type="text/css">
 <!-- Bootstrap tether Core JavaScript -->
 <script src="{{asset('assets')}}/libs/popper.js/dist/umd/popper.min.js"></script>
-<script src="{{asset('assets')}}/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <!-- slimscrollbar scrollbar JavaScript -->
 <script src="{{asset('assets')}}/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
 <script src="{{asset('assets')}}/extra-libs/sparkline/sparkline.js"></script>
@@ -294,8 +287,24 @@
 <link href="{{asset('css')}}/components.css" rel="stylesheet">
 <link href="{{asset('css')}}/colors.css" rel="stylesheet">
 <link href="{{asset('css')}}/custom.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <!-- /global stylesheets -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+{{--validate--}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+<!-- bootstrap time picker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"
+        integrity="sha256-bu/BP02YMudBc96kI7yklc639Mu4iKGUNNcam8D2nLc=" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+@stack('scripts')
+
+@stack('styles')
 </body>
 
 </html>

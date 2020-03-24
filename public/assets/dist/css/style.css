@@ -2018,9 +2018,6 @@ pre {
     background-color: #e9ecef;
     opacity: 1; }
 
-select.form-control:not([size]):not([multiple]) {
-  height: calc(2.0625rem + 2px); }
-
 select.form-control:focus::-ms-value {
   color: #4F5467;
   background-color: #fff; }
@@ -9000,7 +8997,7 @@ Notify
       border-color: transparent; }
   .search-box .app-search .srh-btn {
     position: absolute;
-    top: 23px;
+    top: 10px;
     cursor: pointer;
     right: 20px; }
 

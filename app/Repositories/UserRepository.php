@@ -23,4 +23,20 @@ class UserRepository extends BaseRepository implements UserInterface
     {
         return User::class;
     }
+
+    public function findByEmail($email){
+        return $this->model->where('email',$email)->get();
+    }
+
+    public function create(array $request){
+        self::bcryptPassword($request);
+        return $this->model->create($request);
+    }
+
+    private function bcryptPassword(&$request)
+    {
+        if (!empty($request['password'])) {
+            $request['password'] = bcrypt($request['password']);
+        }
+    }
 }

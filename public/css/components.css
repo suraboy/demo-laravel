@@ -33,6 +33,7 @@
   -o-transition: none !important;
   transition: none !important;
 }
+
 .btn,
 .navbar-link,
 .nav-tabs > li > a,
@@ -141,6 +142,7 @@ a.badge,
  *
  * ---------------------------------------------------------------------------- */
 
+.text-red {color: red;}
 
 .category-title {
   position: relative;
