@@ -288,6 +288,7 @@
 <link href="{{asset('css')}}/colors.css" rel="stylesheet">
 <link href="{{asset('css')}}/custom.css" rel="stylesheet">
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.full.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <!-- /global stylesheets -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">

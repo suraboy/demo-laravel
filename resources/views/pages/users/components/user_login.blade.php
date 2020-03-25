@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-sm-9 col-md-offset-3">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-6">
                                 <div class="form-group has-feedback">
                                     <label>Username :</label>
                                     <input type="text" data-name="user_login" class="form-control"

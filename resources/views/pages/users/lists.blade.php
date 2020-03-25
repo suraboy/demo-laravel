@@ -20,6 +20,7 @@
     </div>
 @endsection('breadcrumb')
 @section('content')
+    @include('commons.alert')
     <div class="row">
         <div class="col-md-12">
             <div class="card ">

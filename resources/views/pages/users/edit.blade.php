@@ -4,14 +4,14 @@
     <div class="row">
         <div class="col-12 d-flex no-block align-items-center">
             <h4>User Management
-                <small class="display-block">Create user</small>
+                <small class="display-block">Edit user</small>
             </h4>
             <div class="ml-auto text-right">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
                         <li class="breadcrumb-item"><a href="{{route('users.index')}}">Lists</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Create</li>
+                        <li class="breadcrumb-item active" aria-current="page">Edit</li>
                     </ol>
                 </nav>
             </div>
@@ -23,8 +23,9 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel registration-form">
-                <form action="{{route('users.insert')}}" id=frm_user_create" method="POST">
+                <form action="{{route('users.update')}}" id=frm_user_edit" method="POST">
                     {!! csrf_field() !!}
+                    <input type="hidden" name="id">
                     <div class="panel panel-default">
                         <div class="nav-tabs-custom" style="margin-bottom: 0px;">
                             <ul class="nav nav-tabs" id="group-user">
@@ -58,6 +59,7 @@
     </div>
 @endsection('content')
 @push('styles')
-@include('pages.users.css.user')
+    @include('pages.users.css.user')
 @endpush
-@include('pages.users.js.create-script')
+
+@include('pages.users.js.edit-script')

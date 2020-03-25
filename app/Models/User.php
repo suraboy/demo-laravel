@@ -32,7 +32,8 @@ class User extends Authenticatable
         'user_group_id',
         'gender',
         'birthday',
-        'action_token'
+        'action_token',
+        'deleted_at'
     ];
 
     /**
