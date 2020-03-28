@@ -3,7 +3,9 @@
 @section('breadcrumb')
     <div class="row">
         <div class="col-12 d-flex no-block align-items-center">
-            <h4 class="page-title">User Management</h4>
+            <h4 class="page-title">User Management
+                <small class="display-block">User Lists Information</small>
+            </h4>
             <i class="now-ui-icons arrows-1_minimal-right"></i>
             <div class="ml-auto text-right">
                 <nav aria-label="breadcrumb">
@@ -18,6 +20,7 @@
     </div>
 @endsection('breadcrumb')
 @section('content')
+    @include('commons.alert')
     <div class="row">
         <div class="col-md-12">
             <div class="card ">
@@ -45,7 +48,7 @@
                                 <td>{{$item['last_name']}}</td>
                                 <td>{{$item['email']}}</td>
                                 <td>
-                                    <a href='{{route("users.info",["id"=>$item['id']])}}' class="btn btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <a href='{{route("users.info",["id"=>$item['id']])}}' class="btn btn btn-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                     <a href="#" class="btn btn-danger" onclick="deletedata({{$item['id']}})"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
@@ -63,7 +66,7 @@
     var j = jQuery.noConflict();
     j(document).ready(function() {
         j("#users-datatable").DataTable();
-        $("#user").addClass("selected");
+        $("#users").addClass("selected");
     } );
 
     function deletedata(id) {

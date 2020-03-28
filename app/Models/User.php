@@ -19,8 +19,8 @@ class User extends Authenticatable
         'id',
         'username',
         'last_name',
+        'nick_name',
         'name',
-        'name_en',
         'email',
         'password',
         'pin',
@@ -32,7 +32,8 @@ class User extends Authenticatable
         'user_group_id',
         'gender',
         'birthday',
-        'action_token'
+        'action_token',
+        'deleted_at'
     ];
 
     /**

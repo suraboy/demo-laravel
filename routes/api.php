@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group([
-    'middleware'=>['auth:api']
+    'namespace' => 'Api',
 ],function($route){
     $route->get('/checkmail','UserController@checkemail')->name('users.checkemail');
 });

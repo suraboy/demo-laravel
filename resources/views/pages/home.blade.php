@@ -3,8 +3,9 @@
 @section('breadcrumb')
     <div class="row">
         <div class="col-12 d-flex no-block align-items-center">
-            <h4 class="page-title">Dashboard</h4>
-            <small>The first page you see after login</small>
+            <h4>Dashboard
+                <small class="display-block">The first page you see after login</small>
+            </h4>
             <div class="ml-auto text-right">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
