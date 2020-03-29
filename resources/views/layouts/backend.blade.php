@@ -142,12 +142,6 @@
                                     <span class="hide-menu"> Users </span>
                                 </a>
                             </li>
-                            <li class="sidebar-item">
-                                <a href="form-wizard.html" class="sidebar-link">
-                                    <i class="fa fa-circle-o"></i>
-                                    <span class="hide-menu"> Form Wizard </span>
-                                </a>
-                            </li>
                         </ul>
                     </li>
                     <li class="sidebar-item">
@@ -303,6 +297,15 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
+<script>
+    function showLoading() {
+        $('.ajaxloading-widget-background').show();
+    }
+
+    function hideLoading() {
+        $('.ajaxloading-widget-background').hide();
+    }
+</script>
 @stack('scripts')
 
 @stack('styles')

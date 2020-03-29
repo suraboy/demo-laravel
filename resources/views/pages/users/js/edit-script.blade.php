@@ -70,14 +70,6 @@
         });
     });
 
-    function showLoading() {
-        $('.ajaxloading-widget-background').show();
-    }
-
-    function hideLoading() {
-        $('.ajaxloading-widget-background').hide();
-    }
-
     function closeAlert(type) {
         if(type == 'alert-success') {
             $('#alert-success').children('p').text('');

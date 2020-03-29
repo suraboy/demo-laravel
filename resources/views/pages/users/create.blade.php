@@ -25,22 +25,20 @@
             <div class="panel registration-form">
                 <form action="{{route('users.insert')}}" id=frm_user_create" method="POST">
                     {!! csrf_field() !!}
-                    <div class="panel panel-default">
-                        <div class="nav-tabs-custom" style="margin-bottom: 0px;">
-                            <ul class="nav nav-tabs" id="group-user">
-                                <li class="active" name="user_info">
-                                    <a data-toggle="tab" href="#user_info">Profile</a>
-                                </li>
-                                <li name="user_login"><a data-toggle="tab" href="#user_login">Account</a></li>
-                            </ul>
+                    <div class="nav-tabs-custom" style="margin-bottom: 0px;">
+                        <ul class="nav nav-tabs" id="group-user">
+                            <li class="active" name="user_info">
+                                <a data-toggle="tab" href="#user_info">Profile</a>
+                            </li>
+                            <li name="user_login"><a data-toggle="tab" href="#user_login">Account</a></li>
+                        </ul>
 
-                            <div class="tab-content" id="group-content-user">
-                                <div id="user_info" class="tab-pane active">
-                                    @include('pages.users.components.user_info')
-                                </div>
-                                <div id="user_login" class="tab-pane">
-                                    @include('pages.users.components.user_login')
-                                </div>
+                        <div class="tab-content" id="group-content-user">
+                            <div id="user_info" class="tab-pane active">
+                                @include('pages.users.components.user_info')
+                            </div>
+                            <div id="user_login" class="tab-pane">
+                                @include('pages.users.components.user_login')
                             </div>
                         </div>
                     </div>
@@ -58,6 +56,6 @@
     </div>
 @endsection('content')
 @push('styles')
-@include('pages.users.css.user')
+    @include('pages.users.css.user')
 @endpush
 @include('pages.users.js.create-script')

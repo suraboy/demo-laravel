@@ -72,6 +72,7 @@
     function deletedata(id) {
         console.log(id);
         if(confirm("Please Confirm to Delete data")){
+            showLoading();
             j("#del_user_id").val(id);
             j("#delete").submit();
         }

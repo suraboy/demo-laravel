@@ -3,9 +3,9 @@
         <div class="panel registration-form">
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-sm-9 col-md-offset-3">
+                    <div class="col-sm-9">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <div class="form-group has-feedback">
                                     <label>Username :</label>
                                     <input type="text" data-name="user_login" class="form-control"
@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-9 col-md-offset-3">
+                    <div class="col-sm-9">
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group has-feedback">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-9 col-md-offset-3">
+                    <div class="col-sm-9">
                         <div class="row">
                             <div class="col-md-12">
                                 <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required">

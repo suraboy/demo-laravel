@@ -68,12 +68,4 @@
         });
     });
 
-    function showLoading() {
-        $('.ajaxloading-widget-background').show();
-    }
-
-    function hideLoading() {
-        $('.ajaxloading-widget-background').hide();
-    }
-
 </script>
