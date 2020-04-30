@@ -105,8 +105,5 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="Money_laravel" />
-    <orderEntry type="module" module-name="horeca-api-merchant" />
-    <orderEntry type="module" module-name="horeca-cms" />
   </component>
 </module>

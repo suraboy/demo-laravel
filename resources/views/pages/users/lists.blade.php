@@ -14,7 +14,6 @@
                         <li class="breadcrumb-item active" aria-current="page">Lists</li>
                     </ol>
                 </nav>
-                <a class="btn btn-success" href="{{route('users.create')}}" style="margin-left:10px;"><i class="fa fa-plus"></i> Create User</a>
             </div>
         </div>
     </div>
@@ -24,8 +23,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card ">
-                <div class="card-header ">
-                    <!-- TEXT -->
+                <div class="card-header" align="right">
+                    <a class="btn btn-success" href="{{route('users.create')}}" style="margin-left:10px;"><i class="fa fa-plus"></i> Create User</a>
                 </div>
                 <div class="card-body ">
                     <table class="table datatable-selection-single" id="users-datatable" width="100%">
