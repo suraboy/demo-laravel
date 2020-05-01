@@ -9,7 +9,7 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    protected $table = 'admin';
+    protected $table = 'partner';
     /**
      * The attributes that are mass assignable.
      *

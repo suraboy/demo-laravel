@@ -33,8 +33,8 @@
 
                     @enderror
                     <div class="form-group has-feedback has-feedback-left">
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                               name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="your email">
+                        <input id="email" type="text" class="form-control @error('email') is-invalid @enderror"
+                               name="username" value="{{ old('email') }}" required autofocus placeholder="your email">
                         <div class="form-control-feedback">
                             <i class="icon-user text-muted"></i>
                         </div>
