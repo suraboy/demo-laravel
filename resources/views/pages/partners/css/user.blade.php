@@ -27,4 +27,7 @@
         justify-content: center;
         flex-direction: column;
     }
+    .content{
+        margin-top: 10px;
+    }
 </style>

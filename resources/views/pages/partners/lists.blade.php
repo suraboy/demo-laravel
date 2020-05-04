@@ -24,10 +24,10 @@
         <div class="col-md-12">
             <div class="card ">
                 <div class="card-header" align="right">
-                    <a class="btn btn-success" href="{{route('users.create')}}" style="margin-left:10px;"><i class="fa fa-plus"></i> Create User</a>
+                    <a class="btn btn-success" href="{{route('partners.create')}}" style="margin-left:10px;"><i class="fa fa-plus"></i> Create User</a>
                 </div>
                 <div class="card-body ">
-                    <table class="table datatable-selection-single" id="users-datatable" width="100%">
+                    <table class="table datatable-selection-single" id="partners-datatable" width="100%">
                         <thead>
                         <tr>
                             <th class="text-header">Created Date</th>
@@ -39,7 +39,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($users as $key => $item)
+                        @foreach($partners as $key => $item)
                             <tr>
                                 <td>{{$item['created_at']}}</td>
                                 <td>{{$item['username']}}</td>
@@ -47,7 +47,7 @@
                                 <td>{{$item['last_name']}}</td>
                                 <td>{{$item['email']}}</td>
                                 <td>
-                                    <a href='{{route("users.info",["id"=>$item['id']])}}' class="btn btn btn-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <a href='{{route("partners.info",["id"=>$item['id']])}}' class="btn btn btn-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                     <a href="#" class="btn btn-danger" onclick="deletedata({{$item['id']}})"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
@@ -64,8 +64,8 @@
 <script type="text/javascript">
     var j = jQuery.noConflict();
     j(document).ready(function() {
-        j("#users-datatable").DataTable();
-        $("#users").addClass("selected");
+        j("#partners-datatable").DataTable();
+        $("#partners").addClass("selected");
     } );
 
     function deletedata(id) {
@@ -78,6 +78,6 @@
     }
 </script>
 
-<form id="delete" method="POST" action='{{route("users.delete")}}'>
+<form id="delete" method="POST" action='{{route("partners.delete")}}'>
     <input type="hidden" name="id" id="del_user_id">
 </form>

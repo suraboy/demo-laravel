@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Repositories\Partner;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use App\Interfaces\UserInterface;
-use App\Models\User;
+use App\Models\Partner;
 use App\Validators\UserValidator;
 
 /**
- * Class UserRepositoryEloquent
- * @package namespace App\Repositories;
+ * Class PartnerRepository
+ * @package namespace App\Repositories\Partner;
  */
-class UserRepository extends BaseRepository implements UserInterface
+class PartnerRepository extends BaseRepository implements PartnerInterface
 {
     /**
      * Specify Model class name
@@ -21,7 +20,7 @@ class UserRepository extends BaseRepository implements UserInterface
      */
     public function model()
     {
-        return User::class;
+        return Partner::class;
     }
 
     public function findByEmail($email){

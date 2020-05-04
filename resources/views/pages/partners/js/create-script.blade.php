@@ -1,9 +1,9 @@
 <script src="{{asset('assets')}}/libs/jquery/dist/jquery.min.js"></script>
 <script >
     $(document).ready(function () {
-        $("#users").addClass("selected");
-        $("#users .collapse").addClass("in");
-        $("#users").children('a').addClass('active');
+        $("#partners").addClass("selected");
+        $("#partners .collapse").addClass("in");
+        $("#partners").children('a').addClass('active');
         $("#btn-user-submit").click(function () {
             $('[required]').each(function (e) {
                 var val = $(this).val()
@@ -42,7 +42,7 @@
             if (email.length > 6)
                 showLoading();
                 $.ajax({
-                    url: '{{route("users.checkemail")}}',
+                    url: '{{route("partners.checkemail")}}',
                     type: 'GET',
                     data: 'email=' + email,
                     beforeSend: function () {

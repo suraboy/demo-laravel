@@ -10,7 +10,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{route('users.index')}}">Lists</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('partners.index')}}">Lists</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Create</li>
                     </ol>
                 </nav>
@@ -23,7 +23,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="panel registration-form">
-                <form action="{{route('users.insert')}}" id=frm_user_create" method="POST">
+                <form action="{{route('partners.insert')}}" id=frm_user_create" method="POST">
                     {!! csrf_field() !!}
                     <div class="nav-tabs-custom" style="margin-bottom: 0px;">
                         <ul class="nav nav-tabs" id="group-user">
@@ -35,10 +35,10 @@
 
                         <div class="tab-content" id="group-content-user">
                             <div id="user_info" class="tab-pane active">
-                                @include('pages.users.components.user_info')
+                                @include('pages.partners.components.user_info')
                             </div>
                             <div id="user_login" class="tab-pane">
-                                @include('pages.users.components.user_login')
+                                @include('pages.partners.components.user_login')
                             </div>
                         </div>
                     </div>
@@ -56,6 +56,6 @@
     </div>
 @endsection('content')
 @push('styles')
-    @include('pages.users.css.user')
+    @include('pages.partners.css.user')
 @endpush
-@include('pages.users.js.create-script')
+@include('pages.partners.js.create-script')

@@ -22,14 +22,14 @@ Route::group([
     $route->get('/', 'HomeController@index')->name('home');
 
     $route->group([
-        'prefix' => 'users'
+        'prefix' => 'partners'
     ], function ($route) {
-        $route->get('/','UserController@index')->name('users.index');
-        $route->get('/create','UserController@create')->name('users.create');
-        $route->post('/','UserController@insert')->name('users.insert');
-        $route->get('/{id}','UserController@show')->name('users.info');
-        $route->post('/update','UserController@update')->name('users.update');
-        $route->post("/delete","UserController@destroy")->name('users.delete');
+        $route->get('/','PartnerController@index')->name('partners.index');
+        $route->get('/create','PartnerController@create')->name('partners.create');
+        $route->post('/','PartnerController@insert')->name('partners.insert');
+        $route->get('/{id}','PartnerController@show')->name('partners.info');
+        $route->post('/update','PartnerController@update')->name('partners.update');
+        $route->post("/delete","PartnerController@destroy")->name('partners.delete');
     });
 
     $route->group([
@@ -43,6 +43,12 @@ Route::group([
         'prefix' => 'agent-reports'
     ], function ($route){
         $route->get('/','ReportAgentController@index')->name('agent-report.index');
+    });
+
+    $route->group([
+        'prefix' => 'shops'
+    ], function ($route){
+        $route->get('/','ShopController@show')->name('shops.info');
     });
 });
 

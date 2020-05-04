@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class Partner extends Authenticatable
 {
     use Notifiable;
 
@@ -18,22 +18,12 @@ class User extends Authenticatable
     protected $fillable = [
         'id',
         'username',
-        'last_name',
-        'nick_name',
-        'name',
-        'email',
+        'companyname',
+        'tax_id',
         'password',
-        'pin',
-        'verify',
-        'verify_date',
-        'mobile',
-        'type',
-        'status',
-        'user_group_id',
-        'gender',
-        'birthday',
-        'action_token',
-        'deleted_at'
+        'phone_number',
+        'line_id',
+        'facebook',
     ];
 
     /**

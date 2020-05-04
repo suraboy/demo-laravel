@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\UserRepository;
+use App\Repositories\PartnerRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 /**
@@ -13,15 +13,15 @@ use Illuminate\Support\Facades\Response;
 class UserController extends Controller
 {
     /**
-     * @var UserRepository
+     * @var PartnerRepository
      */
     protected $userRepository;
 
     /**
      * UserController constructor.
-     * @param UserRepository $userRepository
+     * @param PartnerRepository $userRepository
      */
-    public function __construct(UserRepository $userRepository)
+    public function __construct(PartnerRepository $userRepository)
     {
         $this->userRepository = $userRepository;
     }

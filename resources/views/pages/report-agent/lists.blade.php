@@ -22,7 +22,22 @@
     @include('commons.alert')
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">รายงานสถิติ</h6>
+            <div class="col-md-12">
+                <div class="form-group has-feedback">
+                    <label>ค้นหา :</label>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" placeholder="ค้นหาช่วงเวลา" name="created_at"
+                                   id="created_at">
+                        </div>
+                        <div class="col-md-9" align="left">
+                            <button id="exportOrderTransaction"
+                                    class="btn btn-primary" disabled>
+                                <i class="fas fa-download fa-sm text-white-50"></i> Export Report</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -52,49 +67,57 @@
                         <td>120</td>
                         <td>2</td>
                         <td>2000.00</td>
-                    </tr> <tr>
+                    </tr>
+                    <tr>
+                        <td>2020-04-11</td>
+                        <td>42</td>
+                        <td>120</td>
+                        <td>2</td>
+                        <td>2000.00</td>
+                    </tr>
+                    <tr>
+                        <td>2020-04-10</td>
+                        <td>42</td>
+                        <td>120</td>
+                        <td>2</td>
+                        <td>2000.00</td>
+                    </tr>
+                    <tr>
                         <td>2020-04-12</td>
                         <td>42</td>
                         <td>120</td>
                         <td>2</td>
                         <td>2000.00</td>
-                    </tr> <tr>
+                    </tr>
+                    <tr>
                         <td>2020-04-12</td>
                         <td>42</td>
                         <td>120</td>
                         <td>2</td>
                         <td>2000.00</td>
-                    </tr> <tr>
+                    </tr>
+                    <tr>
                         <td>2020-04-12</td>
                         <td>42</td>
                         <td>120</td>
                         <td>2</td>
                         <td>2000.00</td>
-                    </tr> <tr>
+                    </tr>
+                    <tr>
                         <td>2020-04-12</td>
                         <td>42</td>
                         <td>120</td>
                         <td>2</td>
                         <td>2000.00</td>
-                    </tr> <tr>
+                    </tr>
+                    <tr>
                         <td>2020-04-12</td>
                         <td>42</td>
                         <td>120</td>
                         <td>2</td>
                         <td>2000.00</td>
-                    </tr> <tr>
-                        <td>2020-04-12</td>
-                        <td>42</td>
-                        <td>120</td>
-                        <td>2</td>
-                        <td>2000.00</td>
-                    </tr> <tr>
-                        <td>2020-04-12</td>
-                        <td>42</td>
-                        <td>120</td>
-                        <td>2</td>
-                        <td>2000.00</td>
-                    </tr> <tr>
+                    </tr>
+                    <tr>
                         <td>2020-04-12</td>
                         <td>42</td>
                         <td>120</td>
@@ -106,4 +129,7 @@
             </div>
         </div>
     </div>
-@endsection('content')
+@stop
+@push('scripts')
+    @include('pages.report-agent.js.lists-script')
+@endpush

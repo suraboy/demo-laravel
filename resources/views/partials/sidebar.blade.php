@@ -29,7 +29,7 @@
 
     <!-- Nav Item - Order -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="{{route('shops.info')}}">
             <i class="fas fa-fw fa-store"></i>
             <span>จัดการร้านค้า</span></a>
     </li>
@@ -64,7 +64,7 @@
 
     <!-- Nav Item - Setting -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="{{route("partners.info",["id"=>auth::user()->id])}}">
             <i class="fas fa-fw fa-user"></i>
             <span>ข้อมูลผู้ใช้งาน</span></a>
     </li>

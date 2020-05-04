@@ -1,11 +1,12 @@
-<script src="{{asset('assets')}}/libs/jquery/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+
 <script >
-    var user = @json($users);
+    var user = @json($partners);
     $(document).ready(function () {
         initialInputUser(user)
-        $("#users").addClass("selected");
-        $("#users .collapse").addClass("in");
-        $("#users").children('a').addClass('active');
+        $("#partners").addClass("selected");
+        $("#partners .collapse").addClass("in");
+        $("#partners").children('a').addClass('active');
         $("#btn-user-submit").click(function () {
             $('[required]').each(function (e) {
                 var val = $(this).val()
@@ -44,7 +45,7 @@
             if (email.length > 6)
                 showLoading();
             $.ajax({
-                url: '{{route("users.checkemail")}}',
+                url: '{{route("partners.checkemail")}}',
                 type: 'GET',
                 data: 'email=' + email,
                 beforeSend: function () {
@@ -83,36 +84,36 @@
         }
     }
 
-    function initialInputUser(user) {
+    function initialInputUser(partner) {
         var idInput = $("input[name='id']")
-        var nameInput = $("input[name='name']")
-        var lastNameInput = $('input[name="last_name"]')
+        var companynameInput = $("input[name='companyname']")
+        var taxIDInput = $('input[name="tax_id"]')
         var nickNameInput = $('input[name="nick_name"]')
         var emailInput = $("input[name='email']")
-        var mobileInput = $('input[name="mobile"]')
-        var typeInput = $('select[name="type"]')
-        var birthdayInput = $('input[name="birthday"]')
-        var genderInput = $('select[name="gender"]')
-        var statusInput = $('select[name="status"]')
+        var mobileInput = $('input[name="phone_number"]')
+        var lineInput = $('input[name="line_id"]')
+        var facebookInput = $('input[name="facebook"]')
+        var websiteInput = $('input[name="website"]')
+        var igInput = $('input[name="ig"]')
 
         var usernameInput = $("input[name='username']")
         var passwordInput = $('input[name="password"]')
         var confirmInput = $('input[name="confirm"]')
 
-        idInput.val(user.id);
-        usernameInput.val(user.username);
+        idInput.val(partner.id);
+        usernameInput.val(partner.username);
         passwordInput.removeAttr('required');
         confirmInput.removeAttr('required');
 
-        nameInput.val(user.name);
-        lastNameInput.val(user.last_name)
-        nickNameInput.val(user.nick_name)
-        emailInput.val(user.email)
-        mobileInput.val(user.mobile)
-        typeInput.val(user.type).trigger('change')
-        birthdayInput.val(user.birthday).trigger('change')
-        genderInput.val(user.gender).trigger('change')
-        statusInput.val(user.status).trigger("change");
+        companynameInput.val(partner.namecompany);
+        taxIDInput.val(partner.tax_id)
+        nickNameInput.val(partner.nick_name)
+        emailInput.val(partner.email)
+        mobileInput.val(partner.phone_number)
+        lineInput.val(partner.line_id)
+        facebookInput.val(partner.facebook)
+        websiteInput.val(partner.website)
+        igInput.val(partner.ig)
     }
 
 </script>
